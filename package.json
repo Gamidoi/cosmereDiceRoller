@@ -11,9 +11,6 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "predeploy": "npm run build",
-    "deploy": "npm run build&&gh-pages -d build",
-    "build": "npm run start",
     "deploy:web": "expo export -p web"
   },
   "jest": {
