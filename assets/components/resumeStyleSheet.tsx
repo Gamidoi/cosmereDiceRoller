@@ -44,12 +44,17 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: "center",
         marginHorizontal: 5,
-        color: "white"
+        color: "white",
+        maxWidth: 600,
+        alignSelf: "center",
     },
     coverLetterText: {
         fontSize: 16,
         marginHorizontal: 10,
-        color: "white"
+        color: "white",
+        maxWidth: 600,
+        alignSelf: "center",
+        margin: 5,
     },
     standardLink: {
         fontSize: 16,
@@ -66,12 +71,14 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         marginRight: 5,
         marginLeft: 50,
-        color: "white"
+        color: "white",
+        maxWidth: 590,
     },
     jobDescription: {
         fontSize: 16,
         marginRight: 5,
         marginLeft: 80,
-        color: "white"
+        color: "white",
+        maxWidth: 550,
     },
 })
