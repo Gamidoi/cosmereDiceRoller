@@ -8,7 +8,6 @@ export default function Index() {
             <View style={{alignItems: "center",}}>
                 <Text style={styles.header}>Sam Hapke</Text>
                 <Text style={styles.standardText}>Polk City, Iowa</Text>
-                <Text style={styles.standardText}>515-290-5311</Text>
                 <Text style={[styles.standardText, {textDecorationLine: "underline"}]}>samuel.p.hapke@gmail.com</Text>
 
                 <Text style={styles.subHeader}>Summary</Text>
@@ -25,10 +24,11 @@ export default function Index() {
                 <Text style={styles.subHeader}>References</Text>
                 <Text style={styles.standardText}>Sharon Heger</Text>
                 <Text style={styles.standardText}>Retired Postmaster, Polk City, Iowa</Text>
-                <Text style={styles.standardText}>515-240-5009</Text>
+                <Text style={styles.standardText}> </Text>
                 <Text style={styles.standardText}>Madison (Maddie) Epperson</Text>
                 <Text style={styles.standardText}>Owner of Epperson Farm Bureau, Nevada Iowa</Text>
-                <Text style={styles.standardText}>515-382-2555</Text>
+                <Text style={styles.standardText}> </Text>
+                <Text style={styles.standardText}>contact information available on request</Text>
 
             </View>
         </ScrollView>
