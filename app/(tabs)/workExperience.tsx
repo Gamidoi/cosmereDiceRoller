@@ -14,7 +14,7 @@ export default function WorkExperience() {
                 <View style={{alignItems: "center"}}>
                     <Text style={styles.header}>Sam Hapke</Text>
                     <Text style={styles.subHeader}>Previous Work Experience</Text>
-                    <Text style={styles.standardText}>variable, and versatile</Text>
+                    <Text style={styles.standardText}>variable and versatile</Text>
                 </View>
                 <Pressable style={styles.jobDisplayButton} onPress={() => setPostalDisplay(!postalDisplay)}>
                     <Text style={styles.jobTitle}>{postalDisplay && "-   "}{!postalDisplay && "+  "}Rural Mail Carrier, United States Postal Service</Text>

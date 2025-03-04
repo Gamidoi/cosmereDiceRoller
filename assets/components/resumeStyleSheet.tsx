@@ -66,6 +66,7 @@ export const styles = StyleSheet.create({
     QRstyle: {
         height: 120,
         width: 120,
+        borderColor: "grey",
     },
     jobDescriptionDates: {
         fontSize: 16,
