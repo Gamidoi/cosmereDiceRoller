@@ -33,7 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./Resume/dist
+          path: ./dist
   deploy:
     runs-on: ubuntu-latest
     needs: build
