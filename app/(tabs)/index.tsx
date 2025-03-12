@@ -18,7 +18,7 @@ export default function Index() {
                 <Text style={styles.standardText}>current experience in javascript, html, and react native.</Text>
                 <Text style={styles.subHeader}>Portfolio Piece</Text>
                 <Text style={styles.standardText}>DnD Character Tracker</Text>
-                <Image  style={styles.QRstyle} source={require("@/assets/images/QRCodeForDnDCharacterTracker2.png")} />
+                <Image  style={styles.QRstyle} source={require("../../assets/images/QRCodeForDnDCharacterTracker2.png")} />
                 <Link href={"https://gamidoi.github.io/DnDCharacterTracker/"} style={styles.standardLink}>https://gamidoi.github.io/DnDCharacterTracker/</Link>
 
                 <Text style={styles.subHeader}>References</Text>
