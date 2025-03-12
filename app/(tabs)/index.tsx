@@ -19,7 +19,7 @@ export default function Index() {
                 <Text style={styles.subHeader}>Portfolio Piece</Text>
                 <Text style={styles.standardText}>DnD Character Tracker</Text>
                 <Image  style={styles.QRstyle} source={require("@/assets/images/QRCodeForDnDCharacterTracker.png")} />
-                <Link href={"https://gamidoi.github.io/DnDCharacterTracker/"} style={styles.standardLink}>https://gamidoi.github.io/DnDCharacterTracker/</Link>
+                <Link href={"https://gamidoi.github.io/DnDCharacterTracker2/"} style={styles.standardLink}>https://gamidoi.github.io/DnDCharacterTracker/</Link>
 
                 <Text style={styles.subHeader}>References</Text>
                 <Text style={styles.standardText}>Sharon Heger</Text>
