@@ -11,17 +11,17 @@ export default function TabLayout() {
             backgroundColor: 'black',
         },
     }}>
-            <Tabs.Screen name="index" options={{
+            <Tabs.Screen name="Resume/index" options={{
                 title: 'Home',
                 headerShown: false,
                 tabBarIcon: ({ color }) => <MaterialCommunityIcons size={28}  name="text-account" color={color} />,
             }} />
-            <Tabs.Screen name="coverLetter" options={{
+            <Tabs.Screen name="Resume/coverLetter" options={{
                 title: 'Cover Letter',
                 headerShown: false,
                 tabBarIcon: ({ color }) => <FontAwesome6 size={28}  name="envelope-open-text" color={color} />,
             }} />
-            <Tabs.Screen name="workExperience" options={{
+            <Tabs.Screen name="Resume/workExperience" options={{
                 title: 'Work Experience',
                 headerShown: false,
                 tabBarIcon: ({ color }) => <MaterialCommunityIcons size={28}  name="wrench-clock" color={color} />,
