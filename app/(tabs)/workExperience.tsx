@@ -42,7 +42,6 @@ export default function WorkExperience() {
                 </Pressable>
                 {kumAndGoDisplay && <View>
                     <Text style={styles.jobDescriptionDates}>May 2012 to April 2013</Text>
-                    // needs to be update to be more active
                     <Text style={styles.jobDescription}>-Independence and Time Management skills</Text>
                     <Text style={styles.jobDescription}>-Conflict Management and Communication skills</Text>
                     <Text style={styles.jobDescription}>-Responsibility and Reliability</Text>
