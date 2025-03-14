@@ -68,7 +68,7 @@ export default function WorkExperience() {
                 {cre8iowaDisplay && <View>
                     <Text style={styles.jobDescriptionDates}>November 2011 to November 2015</Text>
                     <Text style={styles.jobDescription}>-Planning and implementing events and competitions</Text>
-                    <Text style={styles.jobDescription}>-Serving as Instant Challange Challenge Master, leading our team of appraisers to give students a great experience</Text>
+                    <Text style={styles.jobDescription}>-Serving as Challenge Master for Instant Challenge, leading our team of appraisers to give students a great experience</Text>
                     <Text style={styles.jobDescription}>-Serving on the Instant Challenge Writing Committee, to design and write challenges for students</Text>
                 </View>}
             </View>
