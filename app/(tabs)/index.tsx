@@ -19,11 +19,13 @@ export default function Index() {
                 <View style={{flexDirection: "row"}}>
                     <View style={{flex: 1, alignItems: "center"}}>
                         <Text style={styles.subHeader}>HackerRank</Text>
-                        <Link href={"https://www.hackerrank.com/profile/gamidoi"} style={styles.standardLink}>https://www.hackerrank.com/profile/gamidoi</Link>
+                        <Link href={"https://www.hackerrank.com/profile/gamidoi"} style={styles.standardLink}>https://www.hackerrank</Link>
+                        <Link href={"https://www.hackerrank.com/profile/gamidoi"} style={styles.standardLink}>.com/profile/gamidoi</Link>
                     </View>
                     <View style={{flex: 1, alignItems: "center"}}>
                         <Text style={styles.subHeader}>GitHub</Text>
-                        <Link href={"https://github.com/Gamidoi"} style={styles.standardLink}>https://github.com/Gamidoi</Link>
+                        <Link href={"https://github.com/Gamidoi"} style={styles.standardLink}>https://github.com</Link>
+                        <Link href={"https://github.com/Gamidoi"} style={styles.standardLink}>/Gamidoi</Link>
                     </View>
                 </View>
                 <View style={{flex: 1, alignItems: "center"}}>
