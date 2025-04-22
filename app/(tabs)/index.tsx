@@ -16,10 +16,22 @@ export default function Index() {
                 <Text style={styles.subHeader}>Skills</Text>
                 <Text style={styles.standardText}>Independence, Organization, Communication.</Text>
                 <Text style={styles.standardText}>current experience in javascript, html, and react native.</Text>
-                <Text style={styles.subHeader}>Portfolio Piece</Text>
-                <Text style={styles.standardText}>DnD Character Tracker</Text>
-                <Image  style={styles.QRstyle} source={require("../../assets/images/QRCodeForDnDCharacterTracker2.png")} />
-                <Link href={"https://gamidoi.github.io/DnDCharacterTracker/"} style={styles.standardLink}>https://gamidoi.github.io/DnDCharacterTracker/</Link>
+                <View style={{flexDirection: "row"}}>
+                    <View style={{flex: 1, alignItems: "center"}}>
+                        <Text style={styles.subHeader}>HackerRank</Text>
+                        <Link href={"https://www.hackerrank.com/profile/gamidoi"} style={styles.standardLink}>https://www.hackerrank.com/profile/gamidoi</Link>
+                    </View>
+                    <View style={{flex: 1, alignItems: "center"}}>
+                        <Text style={styles.subHeader}>GitHub</Text>
+                        <Link href={"https://github.com/Gamidoi"} style={styles.standardLink}>https://github.com/Gamidoi</Link>
+                    </View>
+                </View>
+                <View style={{flex: 1, alignItems: "center"}}>
+                    <Text style={styles.subHeader}>Portfolio Piece</Text>
+                    <Text style={styles.standardText}>DnD Character Tracker</Text>
+                    <Image  style={styles.QRstyle} source={require("../../assets/images/QRCodeForDnDCharacterTracker2.png")} />
+                    <Link href={"https://gamidoi.github.io/DnDCharacterTracker/"} style={styles.standardLink}>https://gamidoi.github.io/DnDCharacterTracker/</Link>
+                </View>
 
                 <Text style={styles.subHeader}>References</Text>
                 <Text style={styles.standardText}>Sharon Heger</Text>
