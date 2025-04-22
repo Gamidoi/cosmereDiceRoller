@@ -1,4 +1,4 @@
-import {ScrollView, Text, View, Image} from "react-native";
+import {ScrollView, Text, View, Image, Platform} from "react-native";
 import {styles} from "@/assets/components/resumeStyleSheet";
 import {Link} from "expo-router";
 
@@ -22,6 +22,7 @@ export default function Index() {
                         <Link href={"https://www.hackerrank.com/profile/gamidoi"} style={styles.standardLink}>https://www.hackerrank</Link>
                         <Link href={"https://www.hackerrank.com/profile/gamidoi"} style={styles.standardLink}>.com/profile/gamidoi</Link>
                     </View>
+                    {Platform.OS === "web" && <View style={{flex: 1, alignItems: "center"}}></View>}
                     <View style={{flex: 1, alignItems: "center"}}>
                         <Text style={styles.subHeader}>GitHub</Text>
                         <Link href={"https://github.com/Gamidoi"} style={styles.standardLink}>https://github.com</Link>
