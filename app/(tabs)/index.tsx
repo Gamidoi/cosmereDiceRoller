@@ -41,7 +41,7 @@ export default function Index() {
                 <Text style={styles.standardText}>Retired Postmaster, Polk City, Iowa</Text>
                 <Text style={styles.standardText}> </Text>
                 <Text style={styles.standardText}>Madison (Maddie) Epperson</Text>
-                <Text style={styles.standardText}>Owner of Epperson Farm Bureau, Nevada Iowa</Text>
+                <Text style={styles.standardText}>Owner of Epperson Farm Bureau, Nevada, Iowa</Text>
                 <Text style={styles.standardText}> </Text>
                 <Text style={styles.standardText}>contact information available on request</Text>
 
