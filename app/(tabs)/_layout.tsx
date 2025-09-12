@@ -12,17 +12,17 @@ export default function TabLayout() {
         },
     }}>
             <Tabs.Screen name="index" options={{
-                title: 'Home',
+                title: 'Main Roller',
                 headerShown: false,
                 tabBarIcon: ({ color }) => <MaterialCommunityIcons size={28}  name="text-account" color={color} />,
             }} />
-            <Tabs.Screen name="coverLetter" options={{
-                title: 'Cover Letter',
+            <Tabs.Screen name="secondTabForThings" options={{
+                title: 'not anything, yet',
                 headerShown: false,
                 tabBarIcon: ({ color }) => <FontAwesome6 size={28}  name="envelope-open-text" color={color} />,
             }} />
-            <Tabs.Screen name="workExperience" options={{
-                title: 'Work Experience',
+            <Tabs.Screen name="thirdTabUnknown" options={{
+                title: 'also nothing',
                 headerShown: false,
                 tabBarIcon: ({ color }) => <MaterialCommunityIcons size={28}  name="wrench-clock" color={color} />,
             }} />

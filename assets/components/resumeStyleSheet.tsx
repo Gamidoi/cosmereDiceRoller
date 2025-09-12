@@ -7,38 +7,11 @@ export const styles = StyleSheet.create({
         marginTop: 60,
         color: "#ff7575"
     },
-    errorButton: {
-        borderWidth: 3,
-        borderColor: "yellow",
-        backgroundColor: "red",
-        padding: 15,
-        textAlign: "center",
-        textAlignVertical: "center",
-    },
     subHeader: {
-        fontSize: 26,
-        textDecorationLine: "underline",
-        color: "#888888"
-    },
-    jobTitle: {
-        fontSize: 22,
-        textDecorationLine: "underline",
-        marginLeft: 30,
-        color: "white"
-    },
-    jobDisplayButton: {
-        borderWidth: 2,
-        borderColor: "grey",
-        marginHorizontal: 20,
-        borderRadius: 8,
-        backgroundColor: "#162255",
-    },
-    volunteerDisplayButton: {
-        borderWidth: 2,
-        borderColor: "grey",
-        marginHorizontal: 20,
-        borderRadius: 8,
-        backgroundColor: "#164020",
+        fontSize: 24,
+        alignSelf: "center",
+        fontWeight: "bold",
+        color: "#44aa66",
     },
     standardText: {
         fontSize: 16,
@@ -48,38 +21,31 @@ export const styles = StyleSheet.create({
         maxWidth: 600,
         alignSelf: "center",
     },
-    coverLetterText: {
-        fontSize: 16,
-        marginHorizontal: 10,
-        color: "white",
-        maxWidth: 600,
-        alignSelf: "center",
-        margin: 5,
-    },
-    standardLink: {
+    moreButton: {
         fontSize: 16,
         textAlign: "center",
+        backgroundColor: "#5575dd",
+    },
+    lessButton: {
+        fontSize: 16,
+        textAlign: "center",
+        backgroundColor: "#dd7566",
+    },
+    moreLessButtonBox: {
+        flexDirection: "column",
         marginHorizontal: 5,
-        color: "powderblue",
-        textDecorationLine: "underline",
+        borderWidth: 2,
+        borderColor: "#ffffff",
+        paddingBottom: 20,
     },
-    QRstyle: {
-        height: 120,
-        width: 120,
-        borderColor: "grey",
+    numberDisplay: {
+        backgroundColor: "#444444",
+        width: 20,
     },
-    jobDescriptionDates: {
-        fontSize: 16,
-        marginRight: 5,
-        marginLeft: 50,
-        color: "white",
-        maxWidth: 590,
-    },
-    jobDescription: {
-        fontSize: 16,
-        marginRight: 5,
-        marginLeft: 80,
-        color: "white",
-        maxWidth: 550,
-    },
+    rollResultOutput: {
+        margin: 5,
+        borderWidth: 2,
+        borderColor: "#aaaaaa",
+        padding: 3,
+    }
 })
