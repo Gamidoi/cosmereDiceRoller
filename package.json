@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Gamidoi.github.io/Resume",
-  "name": "resume",
+  "homepage": "https://Gamidoi.github.io/cosmereDiceRoller",
+  "name": "cosmerediceroller",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
