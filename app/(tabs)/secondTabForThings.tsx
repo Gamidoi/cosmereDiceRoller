@@ -1,5 +1,5 @@
 import {ScrollView, Text, View} from "react-native";
-import {styles} from "@/assets/components/resumeStyleSheet";
+import {styles} from "@/assets/components/styleSheet";
 
 export default function SecondTabForThings() {
     return (

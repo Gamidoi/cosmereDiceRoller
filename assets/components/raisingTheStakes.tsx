@@ -1,5 +1,5 @@
 import {View, Text, Pressable} from "react-native";
-import {styles} from "@/assets/components/resumeStyleSheet";
+import {styles} from "@/assets/components/styleSheet";
 
 export type plotProps = {
     plot: boolean;
@@ -7,7 +7,7 @@ export type plotProps = {
 }
 
 export default function RaisingTheStakes(stakes: plotProps) {
-    return(<View style={{flex: 0.5}}>
+    return(<View style={{}}>
         <Pressable onPress={() => {stakes.setPlot(!stakes.plot)}}>
             <Text style={[
                 styles.subHeader, {

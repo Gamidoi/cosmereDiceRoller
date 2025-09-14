@@ -1,15 +1,19 @@
 import {setOfDice} from "@/assets/components/setOfDice";
 import {View, Text, Pressable} from "react-native";
-import {styles} from "@/assets/components/resumeStyleSheet";
+import {styles} from "@/assets/components/styleSheet";
 import {useState} from "react";
 import {rollNewResult} from "@/assets/components/rollNewResult";
 
 
 export type DiceRollProps = {
     attack: setOfDice;
+    attackAdv: setOfDice;
     damage: setOfDice;
+    damageAdv: setOfDice;
     extra: setOfDice;
+    extraAdv: setOfDice;
     plot: boolean;
+    plotAdv: boolean;
 }
 
 export default function DiceRollButtonAndDisplay(roll: DiceRollProps) {
@@ -34,7 +38,7 @@ export default function DiceRollButtonAndDisplay(roll: DiceRollProps) {
         }}
         onPress={() => {
             rotateRollResults();
-            setLastRoll(rollNewResult(roll.attack, roll.damage, roll.extra, roll.plot));
+            setLastRoll(rollNewResult(roll.attack, roll.attackAdv, roll.damage, roll.damageAdv, roll.extra, roll.extraAdv, roll.plot, roll.plotAdv));
         }}>
             <Text>ROOOOLLLLLLLLLLLL</Text>
         </Pressable>

@@ -1,5 +1,5 @@
 import {Pressable, Text, View} from "react-native";
-import {styles} from "@/assets/components/resumeStyleSheet";
+import {styles} from "@/assets/components/styleSheet";
 import DiceSelector from "@/assets/components/diceSelector";
 import {setOfDice} from "@/assets/components/setOfDice";
 import {useState} from "react";
@@ -16,12 +16,14 @@ export type DiceBoxProps = {
     d4: number;
     mod: number;
     setDiceSet: Function;
+    advantageDice: setOfDice;
+    setAdvantageDice: Function;
 }
 
 export default function ExtraDiceRollComponent(dice: DiceBoxProps) {
     let [extraDiceRollSaver, setExtraDiceRollSaver] = useState(new setOfDice());
 
-    return (<View style={{flex: 0.5}}>
+    return (<View style={{margin: 10}}>
     <Pressable onPress={() => {
         if (dice.hasExtraDiceRoll) {
             setExtraDiceRollSaver(new setOfDice(dice.d20, dice.d12, dice.d10, dice.d8, dice.d6, dice.d4, dice.mod));
@@ -34,14 +36,15 @@ export default function ExtraDiceRollComponent(dice: DiceBoxProps) {
     <Text style={[
             styles.subHeader, {
         color: dice.hasExtraDiceRoll ? "#44aa66" : "maroon",
-            marginTop:  dice.hasExtraDiceRoll ? 17 : 30,
             borderWidth: 3,
             borderColor: "#ffffff",
             paddingHorizontal: 15,
     }]}>Roll Extra Dice?    {dice.hasExtraDiceRoll ? "Yes!" : "no."}</Text>
         </Pressable>
         {dice.hasExtraDiceRoll &&
-            <DiceSelector d20={dice.d20} d12={dice.d12} d10={dice.d10} d8={dice.d8} d6={dice.d6} d4={dice.d4} mod={dice.mod} setDiceSet={dice.setDiceSet}/>
+            <DiceSelector
+                d20={dice.d20} d12={dice.d12} d10={dice.d10} d8={dice.d8} d6={dice.d6} d4={dice.d4} mod={dice.mod}
+                setDiceSet={dice.setDiceSet} advantageDice={dice.advantageDice} setAdvantageDice={dice.setAdvantageDice} />
 }
 
 

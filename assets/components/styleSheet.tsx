@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         alignSelf: "center",
         fontWeight: "bold",
         color: "#44aa66",
+        marginBottom: 10
     },
     standardText: {
         fontSize: 16,
@@ -37,8 +38,8 @@ export const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "#ffffff",
         paddingBottom: 20,
-        marginBottom: 5,
-        height: 48,
+        marginBottom: 10,
+        height: 65,
     },
     numberDisplay: {
         backgroundColor: "#444444",
