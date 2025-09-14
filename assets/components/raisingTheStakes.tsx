@@ -7,7 +7,7 @@ export type plotProps = {
 }
 
 export default function RaisingTheStakes(stakes: plotProps) {
-    return(<View style={{flex: 1, backgroundColor: "black"}}>
+    return(<View style={{flex: 0.5}}>
         <Pressable onPress={() => {stakes.setPlot(!stakes.plot)}}>
             <Text style={[
                 styles.subHeader, {

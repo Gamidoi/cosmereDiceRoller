@@ -10,7 +10,6 @@ export type DiceBoxProps = {
     d6: number;
     d4: number;
     mod: number;
-    //setDiceSet: () => {};
     setDiceSet: Function;
 }
 

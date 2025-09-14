@@ -37,6 +37,8 @@ export const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "#ffffff",
         paddingBottom: 20,
+        marginBottom: 5,
+        height: 48,
     },
     numberDisplay: {
         backgroundColor: "#444444",

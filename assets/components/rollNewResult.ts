@@ -3,92 +3,74 @@ import {setOfDice} from "@/assets/components/setOfDice";
 
 
 export function rollNewResult(attack: setOfDice, damage: setOfDice, extra: setOfDice, plot: boolean): string {
-    let resultOutput: string = "Roll Result: \nd20";
+    let resultOutput: string = "Roll Result: \n";
     let currentDieRoll = 0;
-    let attackValueSum = 0;
+    let valueSum = 0;
 
     let plotRoll = Math.ceil(6 * Math.random());
-    if ((plotRoll == 2 || plotRoll == 4) && plot) {attackValueSum += plotRoll;}
+    if ((plotRoll == 2 || plotRoll == 4) && plot) {valueSum += plotRoll;}
 
-    if (attack.d20 > 1){resultOutput += "s";}
-    for (let i = 0; i < attack.d20; i++) {
-        resultOutput += ", ";
-        currentDieRoll = Math.ceil(20 * Math.random());
-        resultOutput += currentDieRoll;
-        attackValueSum += currentDieRoll;
-    }
+    // Skill/Attack dice roll
+    stringPerRollPerDieSize("d20", attack.d20);
+    valueSum += currentDieRoll;
+    stringPerRollPerDieSize("d12", attack.d12);
+    valueSum += currentDieRoll;
+    stringPerRollPerDieSize("d10", attack.d10);
+    valueSum += currentDieRoll;
+    stringPerRollPerDieSize("d8", attack.d8);
+    valueSum += currentDieRoll;
+    stringPerRollPerDieSize("d6", attack.d6);
+    valueSum += currentDieRoll;
+    stringPerRollPerDieSize("d4", attack.d4);
+    valueSum += currentDieRoll;
+    stringPerRollPerDieSize("mod", attack.mod);
+    valueSum += currentDieRoll;
 
-    if (attack.d12 > 0){
-        resultOutput += "    d12";
-        if (attack.d12 > 1){
-            resultOutput += "s";
-    }}
-    for (let i = 0; i < attack.d12; i++) {
-        resultOutput += ", ";
-        currentDieRoll = Math.ceil(12 * Math.random());
-        resultOutput += currentDieRoll;
-        attackValueSum += currentDieRoll;
-    }
-
-    if (attack.d10 > 0){
-        resultOutput += "    d10";
-        if (attack.d10 > 1){
-            resultOutput += "s";
-        }}
-    for (let i = 0; i < attack.d10; i++) {
-        resultOutput += ", ";
-        currentDieRoll = Math.ceil(10 * Math.random());
-        resultOutput += currentDieRoll;
-        attackValueSum += currentDieRoll;
-    }
-
-    if (attack.d8 > 0){
-        resultOutput += "    d8";
-        if (attack.d8 > 1){
-            resultOutput += "s";
-        }}
-    for (let i = 0; i < attack.d8; i++) {
-        resultOutput += ", ";
-        currentDieRoll = Math.ceil(8 * Math.random());
-        resultOutput += currentDieRoll;
-        attackValueSum += currentDieRoll;
-    }
-
-    if (attack.d6 > 0){
-        resultOutput += "    d6";
-        if (attack.d6 > 1){
-            resultOutput += "s";
-        }}
-    for (let i = 0; i < attack.d6; i++) {
-        resultOutput += ", ";
-        currentDieRoll = Math.ceil(6 * Math.random());
-        resultOutput += currentDieRoll;
-        attackValueSum += currentDieRoll;
-    }
-
-    if (attack.d4 > 0){
-        resultOutput += "    d4";
-        if (attack.d4 > 1){
-            resultOutput += "s";
-        }}
-    for (let i = 0; i < attack.d4; i++) {
-        resultOutput += ", ";
-        currentDieRoll = Math.ceil(4 * Math.random());
-        resultOutput += currentDieRoll;
-        attackValueSum += currentDieRoll;
-    }
-
-    if (attack.mod > 0){
-        resultOutput += "    +" + attack.mod;
-        attackValueSum += attack.mod;
-       }
-
-    resultOutput += "\nTotal Roll: " + attackValueSum + "\n";
+    resultOutput += "    \nTotal Skill/Attack Roll: " + valueSum + "\n";
 
     // damage dice roll
+    if (damage.d20 + damage.d12 + damage.d10 + damage.d8 + damage.d6 + damage.d4 + damage.mod > 0) {
+        valueSum = 0;
 
+        stringPerRollPerDieSize("d20", damage.d20);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d12", damage.d12);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d10", damage.d10);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d8", damage.d8);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d6", damage.d6);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d4", damage.d4);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("mod", damage.mod);
+        valueSum += currentDieRoll;
+
+        resultOutput += "    \nTotal Damage Roll: " + valueSum + "\n";
+    }
 
     // extra dice roll
+    if (extra.d20 + extra.d12 + extra.d10 + extra.d8 + extra.d6 + extra.d4 + extra.mod > 0) {
+        valueSum = 0;
+
+        stringPerRollPerDieSize("d20", extra.d20);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d12", extra.d12);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d10", extra.d10);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d8", extra.d8);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d6", extra.d6);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("d4", extra.d4);
+        valueSum += currentDieRoll;
+        stringPerRollPerDieSize("mod", extra.mod);
+        valueSum += currentDieRoll;
+
+        resultOutput += "    \nTotal Extra Roll: " + valueSum + "\n";
+    }
 
 
 
@@ -104,4 +86,28 @@ export function rollNewResult(attack: setOfDice, damage: setOfDice, extra: setOf
 
 
     return resultOutput;
+
+
+    function stringPerRollPerDieSize(die: string, quantity: number){
+        if (die != "mod"){
+            let dieSize = parseInt(die.substring(1));
+            if (quantity > 0){
+                resultOutput += "    " + die;
+                if (quantity > 1){
+                    resultOutput += "s";
+                }}
+            for (let i = 0; i < quantity; i++) {
+                resultOutput += ", ";
+                let currentDieRoll = Math.ceil(dieSize * Math.random());
+                resultOutput += currentDieRoll;
+                valueSum += currentDieRoll;
+            }
+        } else {
+            if (quantity > 0){
+                resultOutput += "    +" + quantity;
+                valueSum += quantity;
+            }
+        }
+    }
 }
+
