@@ -133,7 +133,7 @@ export default function DiceSelector(dice: DiceBoxProps) {
                     style={styles.lessButton}>
                     <Text style={styles.standardText}>Less</Text></Pressable>
             </View>
-            <View style={{alignSelf: "center"}}><Text>{theDie}!!</Text></View>
+            <View style={{alignSelf: "center"}}><Text style={{color: "white"}}>{theDie}!!</Text></View>
             <View style={{flexDirection: "row"}}>
                 <Pressable
                     onPress = {

@@ -23,7 +23,7 @@ export default function Index() {
     let [extraDiceRollAdvantage, setExtraDiceRollAdvantage] = useState(new setOfDice());
 
     let [plot, setPlot] = useState<boolean>(false);
-    let [plotAdvantage, setPlotAdvantage] = useState<boolean>(false);
+    let [plotAdvantage, setPlotAdvantage] = useState<number>(0);
 
 
 
@@ -43,7 +43,7 @@ export default function Index() {
                     hasExtraDiceRoll={hasExtraDiceRoll} setHasExtraDiceRoll={setHasExtraDiceRoll}
                     d20={extraDiceRoll.d20} d12={extraDiceRoll.d12} d10={extraDiceRoll.d10} d8={extraDiceRoll.d8} d6={extraDiceRoll.d6} d4={extraDiceRoll.d4} mod={extraDiceRoll.mod}
                     setDiceSet={setExtraDiceRoll} advantageDice={extraDiceRollAdvantage} setAdvantageDice={setExtraDiceRollAdvantage} />
-                <RaisingTheStakes plot={plot} setPlot={setPlot} />
+                <RaisingTheStakes plot={plot} setPlot={setPlot} plotAdvantage={plotAdvantage} setPlotAdvantage={setPlotAdvantage} />
 
                 <DiceRollButtonAndDisplay attack={attackRoll} attackAdv={attackRollAdvantage} damage={damageRoll} damageAdv={damageRollAdvantage} extra={extraDiceRoll} extraAdv={extraDiceRollAdvantage} plot={plot} plotAdv={plotAdvantage} />
 

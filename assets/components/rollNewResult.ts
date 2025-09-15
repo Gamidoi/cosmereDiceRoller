@@ -2,13 +2,13 @@ import {setOfDice} from "@/assets/components/setOfDice";
 
 
 
-export function rollNewResult(attack: setOfDice, attackAdv: setOfDice, damage: setOfDice, damageAdv: setOfDice, extra: setOfDice, extraAdv: setOfDice, plot: boolean, plotAdv: boolean): string {
+export function rollNewResult(attack: setOfDice, attackAdv: setOfDice, damage: setOfDice, damageAdv: setOfDice, extra: setOfDice, extraAdv: setOfDice, plot: boolean, plotAdv: number): string {
     let resultOutput: string = "Roll Result: \n";
     let currentDieRoll = 0;
     let valueSum = 0;
 
     let plotRoll = Math.ceil(6 * Math.random());
-    if ((plotRoll == 2 || plotRoll == 4) && plot) {valueSum += plotRoll;}
+    let plotRollAdv = Math.ceil(6 * Math.random());
 
     // Skill/Attack dice roll
     stringPerRollPerDieSize("d20", attack.d20, attackAdv.d20);
@@ -26,7 +26,13 @@ export function rollNewResult(attack: setOfDice, attackAdv: setOfDice, damage: s
     stringPerRollPerDieSize("mod", attack.mod, attackAdv.mod);
     valueSum += currentDieRoll;
 
-    resultOutput += "    \nTotal Skill/Attack Roll: " + valueSum + "\n\n";
+    resultOutput += "    \nTotal Skill/Attack Roll: " + valueSum;
+    if (plotRoll == 1 && plotAdv == 0){
+        resultOutput += " +2";
+    } else if (plotRoll == 2 && plotAdv == 0){
+        resultOutput += " +4";
+    }
+    resultOutput += "\n\n";
 
     // damage dice roll
     if (damage.d20 + damage.d12 + damage.d10 + damage.d8 + damage.d6 + damage.d4 + damage.mod > 0) {
@@ -72,13 +78,38 @@ export function rollNewResult(attack: setOfDice, attackAdv: setOfDice, damage: s
         resultOutput += "    \nTotal Extra Roll: " + valueSum + "\n\n";
     }
 
-    if (plot){
-        if (plotRoll == 1 || plotRoll == 3){
+    if (plot && plotAdv == 0){
+        if (plotRoll == 4 || plotRoll == 3){
             resultOutput += "Fate Ignores You.";
         } else if (plotRoll > 4){
             resultOutput += "Fate Presents an Opportunity.";
         } else {
-            resultOutput += "Fate Deals a Complication. (" + plotRoll + ")";
+            resultOutput += "Fate Deals a Complication. (" + (2 * plotRoll) + ")";
+        }
+    } else if (plot && plotAdv == 1){
+        resultOutput += "Fate Offers a Choice:\n";
+        if (plotRoll == 4 || plotRoll == 3){
+            resultOutput += "Silence : ";
+        } else if (plotRoll > 4){
+            resultOutput += "Opportunity : ";
+        } else {
+            resultOutput += "Complication(" + (2 * plotRoll) + ") : ";
+        }
+        if (plotRollAdv == 4 || plotRollAdv == 3){
+            resultOutput += "Silence";
+        } else if (plotRollAdv > 4){
+            resultOutput += "Opportunity";
+        } else {
+            resultOutput += "Complication(" + (2 * plotRollAdv) + ")";
+        }
+    } else if (plot && plotAdv == -1){
+        resultOutput += "Fate Moves Against You:\n";
+        if (plotRoll < 3 || plotRollAdv < 3){
+            resultOutput += "And Forces a Complication (" + ((plotRoll == 1 || plotRollAdv == 1) ? "2" : "4") + ").";
+        } else if (plotRoll > 4 && plotRollAdv > 4){
+            resultOutput += "But Cannot Prevent an Opportunity.";
+        } else {
+            resultOutput += "And Prevents an Opportunity.";
         }
     }
 

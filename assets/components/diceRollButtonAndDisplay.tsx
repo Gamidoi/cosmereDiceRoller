@@ -13,7 +13,7 @@ export type DiceRollProps = {
     extra: setOfDice;
     extraAdv: setOfDice;
     plot: boolean;
-    plotAdv: boolean;
+    plotAdv: number;
 }
 
 export default function DiceRollButtonAndDisplay(roll: DiceRollProps) {
@@ -40,7 +40,7 @@ export default function DiceRollButtonAndDisplay(roll: DiceRollProps) {
             rotateRollResults();
             setLastRoll(rollNewResult(roll.attack, roll.attackAdv, roll.damage, roll.damageAdv, roll.extra, roll.extraAdv, roll.plot, roll.plotAdv));
         }}>
-            <Text>ROOOOLLLLLLLLLLLL</Text>
+            <Text style={styles.standardText}>ROOOOLLLLLLLLLLLL</Text>
         </Pressable>
         <Text style={styles.subHeader}>Roll Results</Text>
         <Text style={[styles.standardText, styles.rollResultOutput]}>{lastRoll}</Text>
